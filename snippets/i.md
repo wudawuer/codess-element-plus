@@ -34,5 +34,4 @@ doms.content.value._filterSearch(param)
 </script>
 	
 <style lang='stylus' scoped></style>
-	
 ```

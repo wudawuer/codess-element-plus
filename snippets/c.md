@@ -46,5 +46,4 @@ const doms = {
  </script>
 	
  <style lang='stylus' scoped></style>
-	
 ```

@@ -18,5 +18,4 @@ export default defineComponent({
 </script>
 	
 <style lang='stylus' scoped></style>
-	
 ```

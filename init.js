@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+const nReg = /^ep/;
+
 /**
  * Windows 系统中的保留设备名称，不能用作文件或文件夹的名称
  * TODO
@@ -20,7 +22,10 @@ fs.readdirSync(originPath).forEach((_) => {
     let prefix = item[i].prefix;
     let body = item[i].body;
     let description = item[i].description;
-    prefix = prefix.replace(/^ep/, '');
+    if (!nReg.test(prefix)) {
+      console.log(`有特殊触发词`, prefix);
+    }
+    prefix = prefix.replace(nReg, '');
     let fileName = prefix;
     if (reservedNames.some((_) => _.test(fileName))) {
       fileName = fileName + '_';
